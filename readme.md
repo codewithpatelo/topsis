@@ -9,7 +9,7 @@
 
 TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution) is an algorithm developed in 1981 by Hwang and Yoon.
 It is a technique commonly utilised in the field of operation research, managerial accounting, decision science and prescriptive analytics for multi-attribute decision-making problems (MADC).
-Its most common use case is to select the optimal choice from an array of alternatives with complicting criteria. (For instance, to select a celphone to buy that have the highest quality camera at the lowest price).
+Its most common use case is to select the optimal choice from an array of alternatives with conflicting criteria. (For instance, to select a celphone to buy that have the highest quality camera at the lowest price).
 The central idea behind the algorithm is that the most desirable solution is the one that has the highest geometric distance (euclidean distance) to the anti-ideal solution and the lowest euclidean distance to the ideal solution.
 
 ## Installation
