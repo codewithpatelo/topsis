@@ -34,9 +34,11 @@ Returns:
 
 ## Documentation
 
-* m argument stands for 'alternative matrix' and is a matrix that contains the data from all alternatives. Columns are criteria and rows are alternatives. This argument **MUST** be a matrix object from linear-algebra module and **MUST** contain numeric data.
-* ia argument stands for 'impact argument' and this is the argument that indicates which criteria is beneficial and which is not. So which ones we want to minimise and which ones we want to maximise. This argument **MUST** have the exact same length than the number of columns that the alternative matrix has. Each weight **MUST** be a number from 0 to 1 and all weights **MUST** sum 1.
-* w argument stands for 'weights argument' or also known as eigenvector and this is the argument that indicates which are the weights of each criterion. This argument **MUST** be an array and have the exact same length than the number of columns that the alternative matrix has. All of the elements of the array **MUST** be strings containing the string 'max' or 'min' accordingly.
+* **m** argument stands for 'alternative matrix' and is a matrix that contains the data from all alternatives. Columns are criteria and rows are alternatives. This argument **MUST** be a matrix object from linear-algebra module and **MUST** contain numeric data.
+* **ia** argument stands for 'impact argument' and this is the argument that indicates which criteria is beneficial and which is not. So which ones we want to minimise and which ones we want to maximise.  This argument **MUST** have the exact same length than the number of columns that the alternative matrix has. Each weight **MUST** be a number from 0 to 1 and all weights **MUST** sum 1.
+* **w** argument stands for 'weights argument' or also known as eigenvector and this is the argument that indicates which are the weights of each criterion. This argument **MUST** be an array and have the exact same length than the number of columns that the alternative matrix has. All of the elements of the array **MUST** be strings containing the string 'max' or 'min' accordingly.
+
+**NOTE:** Make sure to read through bibliography below of TOPSIS to understand how the algorithm works.
 
 ## License
 
