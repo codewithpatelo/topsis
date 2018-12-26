@@ -17,7 +17,7 @@ function sortedBy(elm){
 }
 
 
-exports.topsis = function getBest(m, w, ia) {
+exports.getBest = function (m, w, ia) {
 	
 //ERROR HANDLERS
 
