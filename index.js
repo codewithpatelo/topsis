@@ -21,7 +21,10 @@ exports.getBest = function (m, w, ia) {
 	
 //ERROR HANDLERS
 
-if (!(m instanceof Matrix || m instanceof linearAlgebra.Matrix)) {
+let c1 = m instanceof Matrix;
+let c2 = m instanceof linearAlgebra.Matrix;
+
+if (c1 == false || c2 == false) {
 	return console.log('ERROR. Matrix argument MUST be a linear-algebra module matrix.');
 } else {
 

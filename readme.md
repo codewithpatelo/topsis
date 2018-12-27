@@ -1,8 +1,10 @@
-` cons linearAlgebra = require('linear-algebra')(),   
+```javascript
+const linearAlgebra = require('linear-algebra')(),   
     Vector = linearAlgebra.Vector,
     Matrix = linearAlgebra.Matrix; `
+const topsis = require('topsis') 
 
-` cons topsis = require('topsis') `
+```
 
 
 # Topsis
