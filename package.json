@@ -1,6 +1,6 @@
 {
   "name": "topsis",
-  "version": "1.0.9",
+  "version": "1.1.5",
   "description": "This is an implementation of TOPSIS algorithm for multi-criteria decision-making and prescriptive analytics.",
   "main": "index.js",
   "scripts": {

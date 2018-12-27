@@ -21,10 +21,8 @@ exports.getBest = function (m, w, ia) {
 	
 //ERROR HANDLERS
 
-let c1 = m instanceof Matrix;
-let c2 = m instanceof linearAlgebra.Matrix;
 
-if (c1 == false || c2 == false) {
+if (!(m.data)) {
 	return console.log('ERROR. Matrix argument MUST be a linear-algebra module matrix.');
 } else {
 
@@ -55,12 +53,17 @@ if (w.length != m.cols) {
 	return console.log('ERROR. Weights argument size MUST be equal to Alternative Matrix columns size.');
 } 
 
-i = 0;
+let i = 0;
 for (i = 0; i < m.cols; i++) {
 	if (w[i] > 1) {
 		return console.log('ERROR. The value from an element in the weights argument cannot be higher than 1.');
 	}
 }
+
+function add(a, b) {
+    return a + b;
+}
+
 
 if (w.reduce(add, 0) > 1) {
 	return console.log('ERROR. Elements from the weights argument must sum exactly 1.');
@@ -68,12 +71,10 @@ if (w.reduce(add, 0) > 1) {
 
 
 
-
-
 // Calculating norm
 
 let j; // Cols
-let i; // Rows
+i = 0; // Rows
 let norm = 0;
 let normArray = [];
 
