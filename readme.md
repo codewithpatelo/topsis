@@ -34,6 +34,10 @@ Returns:
 [2, 5, 5]
 ```
 
+## DEMO
+
+https://runkit.com/patelotech/runkit-npm-topsis
+
 ## Documentation
 
 * **m** argument stands for 'alternative matrix' and is a matrix that contains the data from all alternatives. Columns are criteria and rows are alternatives. This argument **MUST** be a matrix object from linear-algebra module and **MUST** contain numeric data.
