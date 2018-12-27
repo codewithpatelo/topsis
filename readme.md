@@ -24,8 +24,8 @@ The central idea behind the algorithm is that the most desirable solution is the
 
 ```javascript
 let m = new Matrix([[2, 5, 5], [60, 26, 4], [20, 20, 4],  [500, 2, 4], [50, 23, 3], [25, 10, 1]]); // This argument is the alternative matrix. Each row is an alternative and each column is a criterion.
-let ia = ['min', 'min', 'max']; // This argument indicates if a criterion is beneficial or not.
 let w = [0.27,0.33,0.40];  // This argument indicates the weights of each criteria.
+let ia = ['min', 'min', 'max']; // This argument indicates if a criterion is beneficial or not.
 
 
 topsis.getBest(m, w, ia);
@@ -46,7 +46,7 @@ https://runkit.com/patelotech/runkit-npm-topsis
 |:-------------:|:-------------:|:-----:|:-----:|:-----:|
 | m             | **m** argument stands for 'alternative matrix' and is a matrix that contains the data from all alternatives. Columns are criteria and rows are alternatives.  | True | Matrix of numeric data | This argument **MUST** be a matrix object from linear-algebra module and **MUST** contain only numeric data. | 
 | w | **w** argument stands for 'weights argument' or also known as eigenvector and this is the argument that indicates the weighting of each criterion.    |     True | Array of float numbers.     |   This argument **MUST** have the exact same length than the number of columns that the alternative matrix has. Each weight **MUST** be a number from 0 to 1 and all weights **MUST** sum 1.  |
-| ia     | **ia** argument stands for 'impact argument' and this is the argument that indicates which criteria is beneficial and which is not. So which ones we want to minimise and which ones we want to maximise.    |  True | Array of strings     |   This argument **MUST**  have the exact same length than the number of columns that the alternative matrix has. All of the elements of the array **MUST** be strings containing the string 'max' or 'min' accordingly.  |
+| ia     | **ia** argument stands for 'impact argument' and this is the argument that indicates which criteria is beneficial and which is not. So which ones we want to minimise and which ones we want to maximise.    |  True | Array of strings.     |   This argument **MUST**  have the exact same length than the number of columns that the alternative matrix has. All of the elements of the array **MUST** be strings containing the string 'max' or 'min' accordingly.  |
  
 **NOTE:** Make sure to read through bibliography below of TOPSIS to understand how the algorithm works.
 
@@ -61,13 +61,7 @@ https://runkit.com/patelotech/runkit-npm-topsis
 7. Rank in descending order performance scores for each alternative.
 8. Return the top-one.
 
-## License
 
-MIT
-
-## Contributing
-
-https://github.com/patelotech/topsis
 
 ## Package roadmap
 
@@ -81,6 +75,28 @@ https://github.com/patelotech/topsis
 ## Package Dependencies
 
 * linear-algebra
+
+## License
+
+MIT
+
+## Contributing
+
+https://github.com/patelotech/topsis
+
+## Linting
+
+* AIRBNB
+[AIRBNB JS CODE STYLE](https://dev.mysql.com/doc/ "AIRBNB JS CODE STYLE")
+
+### Configuration
+
+* Eslint v-4.19.1 // AIRBNB Configuration
+
+### Linting scripts:
+
+* Error check: `npm run check`
+* Error fix:  `npm run lint` or `npm run check -- --fix`
 
 ## Bibliography
 
