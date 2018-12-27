@@ -8,8 +8,9 @@ const topsis = require('topsis')
 
 ```
 
-
 # Topsis
+[![npm version](https://badge.fury.io/js/recht.svg)](https://badge.fury.io/js/recht)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/dashersw/recht/master/LICENSE)
 
 TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution) is an algorithm developed in 1981 by Hwang and Yoon.
 It is a technique commonly utilised in the field of operations research, managerial accounting, decision science and prescriptive analytics for multi-attribute decision-making problems (MADC).

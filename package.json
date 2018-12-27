@@ -1,12 +1,20 @@
 {
   "name": "topsis",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "This is an implementation of TOPSIS algorithm for multi-criteria decision-making and prescriptive analytics.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "check": "eslint --ignore-path .eslintignore .",
-    "lint": "eslint --ignore-path .eslintignore . -- --fix"
+    "test": "mocha",
+    "lint": "eslint --ignore-path .eslintignore .",
+    "lint-fix": "eslint --ignore-path .eslintignore . -- --fix"
+  },
+   "precommit": [
+    "lint",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patelotech/topsis.git"
   },
   "keywords": [
     "topsis",
