@@ -13,6 +13,7 @@ const topsis = require('topsis')
 [![build](https://travis-ci.org/patelotech/topsis.svg?branch=master)](https://travis-ci.org/patelotech/topsis)
 [![Coverage Status](https://coveralls.io/repos/github/patelotech/topsis/badge.svg?branch=master)](https://coveralls.io/github/patelotech/topsis?branch=master)
 [![Known Vulnerabilities](https://snyk.io/test/github/patelotech/topsis/badge.svg?targetFile=package.json)](https://snyk.io/test/github/patelotech/topsis?targetFile=package.json)
+[![dependencies Status](https://david-dm.org/patelotech/topsis/status.svg)](https://david-dm.org/patelotech/topsis)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/dashersw/recht/master/LICENSE) [![Greenkeeper badge](https://badges.greenkeeper.io/patelotech/topsis.svg)](https://greenkeeper.io/)
 
 TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution) is an algorithm developed in 1981 by Hwang and Yoon.
