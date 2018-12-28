@@ -22,18 +22,18 @@ exports.getBest = function (m, w, ia) {
 
 
   if (!(m.data)) {
-	console.log('ERROR. Matrix argument MUST be a linear-algebra module matrix.');
+    console.log('ERROR. Matrix argument MUST be a linear-algebra module matrix.');
     return 'ERROR';
   }
 
 
   if (Array.isArray(ia) === false) {
-	console.log('ERROR. Impact argument MUST be an array.');
+    console.log('ERROR. Impact argument MUST be an array.');
     return 'ERROR';
   }
 
   if (ia.length !== m.cols) {
-	console.log('ERROR. Impact argument size MUST be equal to Alternative Matrix columns size.');
+    console.log('ERROR. Impact argument size MUST be equal to Alternative Matrix columns size.');
     return 'ERROR';
   }
 

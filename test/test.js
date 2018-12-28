@@ -67,7 +67,6 @@ describe('ErrWsum', () => {
 });
 
 
-
 describe('isArray', () => {
   it('Result should be array.', () => {
     assert.equal(Array.isArray(topsis.getBest(m, w, ia)), Array.isArray([2, 5, 5]));
@@ -77,8 +76,7 @@ describe('isArray', () => {
 describe('getBest', () => {
   it('should return the alternative with the lowest euclidean distance to ideal solution and highest to the anti ideal solution and it should be array with numeric data', () => {
     console.log(topsis.getBest(m, w, ia));
-	assert.equal(topsis.getBest(m, w, ia), topsis.getBest(m, w, ia));
+    assert.equal(topsis.getBest(m, w, ia), topsis.getBest(m, w, ia));
   });
 });
-
 
