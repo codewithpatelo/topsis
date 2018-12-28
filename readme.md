@@ -105,4 +105,4 @@ MIT
 
 -   Hwang, C. L., & Yoon, K. (1981). Methods for multiple attribute decision making. In Multiple attribute decision making (pp. 58-191).Springer, Berlin, Heidelberg.
 
-**Proudly made in 🇦🇷**
+** Proudly made in <span>🇦🇷</span> **
