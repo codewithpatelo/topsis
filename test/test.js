@@ -1,8 +1,7 @@
 const assert = require('assert');
 
 const linearAlgebra = require('linear-algebra')(),
-  Vector = linearAlgebra.Vector,
-  Matrix = linearAlgebra.Matrix;
+                    Matrix = linearAlgebra.Matrix;
 
 const topsis = require('../index.js');
 

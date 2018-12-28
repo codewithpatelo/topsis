@@ -1,5 +1,4 @@
 const linearAlgebra = require('linear-algebra')(),
-  Vector = linearAlgebra.Vector,
   Matrix = linearAlgebra.Matrix;
 
 
@@ -22,38 +21,38 @@ exports.getBest = function (m, w, ia) {
 
 
   if (!(m.data)) {
-    return console.log('ERROR. Matrix argument MUST be a linear-algebra module matrix.');
+    return 'ERROR. Matrix argument MUST be a linear-algebra module matrix.';
   }
 
 
-  if (Array.isArray(ia) == false) {
-    return console.log('ERROR. Impact argument MUST be an array.');
+  if (Array.isArray(ia) === false) {
+    return 'ERROR. Impact argument MUST be an array.';
   }
 
-  if (ia.length != m.cols) {
-    return console.log('ERROR. Impact argument size MUST be equal to Alternative Matrix columns size.');
+  if (ia.length !== m.cols) {
+    return 'ERROR. Impact argument size MUST be equal to Alternative Matrix columns size.';
   }
 
-  if (ia.every(i => typeof i === 'string') == false) {
-    return console.log('ERROR. Impact argument MUST contain string type elements.');
+  if (ia.every(i => typeof i === 'string') === false) {
+    return 'ERROR. Impact argument MUST contain string type elements.';
   }
-  if (ia.indexOf('max') > -1 == false || ia.indexOf('min') > -1 == false) {
-    return console.log('ERROR. Impact argument MUST contain string type element exactly named "max" or "min" accordingly.');
-  }
-
-
-  if (Array.isArray(w) == false) {
-    return console.log('ERROR. Weights argument MUST be an array.');
+  if (ia.indexOf('max') > -1 == false || ia.indexOf('min') > -1 === false) {
+    return 'ERROR. Impact argument MUST contain string type element exactly named "max" or "min" accordingly.';
   }
 
-  if (w.length != m.cols) {
-    return console.log('ERROR. Weights argument size MUST be equal to Alternative Matrix columns size.');
+
+  if (Array.isArray(w) === false) {
+    return 'ERROR. Weights argument MUST be an array.';
+  }
+
+  if (w.length !== m.cols) {
+    return 'ERROR. Weights argument size MUST be equal to Alternative Matrix columns size.';
   }
 
   let i = 0;
   for (i = 0; i < m.cols; i++) {
     if (w[i] > 1) {
-      return console.log('ERROR. The value from an element in the weights argument cannot be higher than 1.');
+      return 'ERROR. The value from an element in the weights argument cannot be higher than 1.';
     }
   }
 
@@ -63,7 +62,7 @@ exports.getBest = function (m, w, ia) {
 
 
   if (w.reduce(add, 0) > 1) {
-    return console.log('ERROR. Elements from the weights argument must sum exactly 1.');
+    return 'ERROR. Elements from the weights argument must sum exactly 1.';
   }
 
 
@@ -133,7 +132,7 @@ exports.getBest = function (m, w, ia) {
         attributeValues.push(wnm.data[i][j]);
       }
 
-      if (a == 0) {
+      if (a === 0) {
         if (ia[j] == 'min') {
           attributeFunction = Math.min(...attributeValues);
 	    idealSolution.push(attributeFunction);
@@ -141,7 +140,7 @@ exports.getBest = function (m, w, ia) {
 	    attributeFunction = Math.max(...attributeValues);
 	    idealSolution.push(attributeFunction);
         }
-      } else if (a == 1) {
+      } else if (a === 1) {
         if (ia[j] == 'min') {
           attributeFunction = Math.max(...attributeValues);
 	    aidealSolution.push(attributeFunction);
