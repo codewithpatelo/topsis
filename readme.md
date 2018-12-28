@@ -9,6 +9,7 @@ const topsis = require('topsis')
 ```
 
 # Topsis
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/76980eb6d7fc488c917cb7cb0b638fd8)](https://app.codacy.com/app/patelotech/topsis?utm_source=github.com&utm_medium=referral&utm_content=patelotech/topsis&utm_campaign=Badge_Grade_Dashboard)
 [![npm version](https://badge.fury.io/js/recht.svg)](https://badge.fury.io/js/recht)
 [![build](https://travis-ci.org/patelotech/topsis.svg?branch=master)](https://travis-ci.org/patelotech/topsis)
 [![Coverage Status](https://coveralls.io/repos/github/patelotech/topsis/badge.svg?branch=master)](https://coveralls.io/github/patelotech/topsis?branch=master)
