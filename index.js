@@ -22,39 +22,47 @@ exports.getBest = function (m, w, ia) {
 
 
   if (!(m.data)) {
-    return 'ERROR. Matrix argument MUST be a linear-algebra module matrix.';
+	console.log('ERROR. Matrix argument MUST be a linear-algebra module matrix.');
+    return 'ERROR';
   }
 
 
   if (Array.isArray(ia) === false) {
-    return 'ERROR. Impact argument MUST be an array.';
+	console.log('ERROR. Impact argument MUST be an array.');
+    return 'ERROR';
   }
 
   if (ia.length !== m.cols) {
-    return 'ERROR. Impact argument size MUST be equal to Alternative Matrix columns size.';
+	console.log('ERROR. Impact argument size MUST be equal to Alternative Matrix columns size.');
+    return 'ERROR';
   }
 
   if (ia.every(i => typeof i === 'string') === false) {
-    return 'ERROR. Impact argument MUST contain string type elements.';
+    console.log('ERROR. Impact argument MUST contain string type elements.');
+    return 'ERROR';
   }
   if (ia.indexOf('max') > -1 === false || ia.indexOf('min') > -1 === false) {
-    return 'ERROR. Impact argument MUST contain string type element exactly named "max" or "min" accordingly.';
+    console.log('ERROR. Impact argument MUST contain string type element exactly named "max" or "min" accordingly.');
+    return 'ERROR';
   }
 
 
   if (Array.isArray(w) === false) {
-    return 'ERROR. Weights argument MUST be an array.';
+    console.log('ERROR. Weights argument MUST be an array.');
+    return 'ERROR';
   }
 
   if (w.length !== m.cols) {
-    return 'ERROR. Weights argument size MUST be equal to Alternative Matrix columns size.';
+    console.log('ERROR. Weights argument size MUST be equal to Alternative Matrix columns size.');
+    return 'ERROR';
   }
 
   let i = 0;
 
   for (i = 0; i < m.cols; i += 1) {
     if (w[i] > 1) {
-      return 'ERROR. The value from an element in the weights argument cannot be higher than 1.';
+      console.log('ERROR. The value from an element in the weights argument cannot be higher than 1.');
+      return 'ERROR';
     }
   }
 
@@ -64,7 +72,8 @@ exports.getBest = function (m, w, ia) {
 
 
   if (w.reduce(add, 0) > 1) {
-    return 'ERROR. Elements from the weights argument must sum exactly 1.';
+    console.log('ERROR. Elements from the weights argument must sum exactly 1.');
+    return 'ERROR';
   }
 
 
