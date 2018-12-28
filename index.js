@@ -6,7 +6,7 @@ const Matrix = linearAlgebra.Matrix;
 // General function to sort JSON array by attribute:
 
 function sortedBy(elm) {
-  return function (a, b) {
+  return function order(a, b) {
     if (b[elm] > a[elm]) {
       return 1;
     } else if (b[elm] < a[elm]) {
@@ -17,7 +17,7 @@ function sortedBy(elm) {
 }
 
 
-exports.getBest = function (m, w, ia) {
+exports.getBest = function getBest(m, w, ia) {
 // ERROR HANDLERS
 
 
@@ -41,7 +41,10 @@ exports.getBest = function (m, w, ia) {
     console.log('ERROR. Impact argument MUST contain string type elements.');
     return 'ERROR';
   }
-  if (ia.indexOf('max') > -1 === false || ia.indexOf('min') > -1 === false) {
+
+  const c1 = ia.indexOf('max') > -1;
+  const c2 = ia.indexOf('min') > -1;
+  if (c1 === false || c2 === false) {
     console.log('ERROR. Impact argument MUST contain string type element exactly named "max" or "min" accordingly.');
     return 'ERROR';
   }
@@ -183,11 +186,10 @@ exports.getBest = function (m, w, ia) {
       distToI = 0;
       distToaI = 0;
       for (j = 0; j < m.cols; j += 1) {
-        wnm.data[i];
         if (a === 0) {
-          distToI += Math.pow(wnm.data[i][j] - idealSolution[j], 2);
+          distToI += ((wnm.data[i][j] - idealSolution[j]) ** 2);
         } else {
-          distToaI += Math.pow(wnm.data[i][j] - aidealSolution[j], 2);
+          distToaI += ((wnm.data[i][j] - aidealSolution[j]) ** 2);
         }
       }
 
