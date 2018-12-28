@@ -17,7 +17,7 @@ const topsis = require('topsis')
 [![dependencies Status](https://david-dm.org/patelotech/topsis/status.svg)](https://david-dm.org/patelotech/topsis)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/dashersw/recht/master/LICENSE) [![Greenkeeper badge](https://badges.greenkeeper.io/patelotech/topsis.svg)](https://greenkeeper.io/)
 
-TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution) is an algorithm developed in 1981 by Hwang and Yoon.
+This is the first library in NodeJS to implement, TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution). This is an algorithm developed in 1981 by Hwang and Yoon.
 It is a technique commonly utilised in the field of operations research, managerial accounting, decision science and prescriptive analytics for multi-attribute decision-making problems (MADC).
 Its most common use case is to select the optimal choice from an array of alternatives with conflicting criteria. (For instance, to select a celphone to buy that have the highest quality camera at the lowest price).
 The central idea behind the algorithm is that the most desirable solution is the one that has the highest geometric distance (euclidean distance) to the anti-ideal solution and the lowest euclidean distance to the ideal solution.
