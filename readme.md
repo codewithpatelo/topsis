@@ -44,7 +44,7 @@ Returns:
 
 ## DEMO
 
-https://runkit.com/patelotech/runkit-npm-topsis
+<https://runkit.com/patelotech/runkit-npm-topsis>
 
 ## Documentation
 
@@ -56,7 +56,7 @@ https://runkit.com/patelotech/runkit-npm-topsis
  
 **NOTE:** Make sure to read through bibliography below of TOPSIS to understand how the algorithm works.
 
-### Algorithm Steps:
+### Algorithm Steps
 
 1. Computing normalised alternative matrix. (Alternative matrix divided by calculated norm of each column).
 2. Computing weighted normalised alternative matrix. (Alternative matrix multiplied by eigenvector).

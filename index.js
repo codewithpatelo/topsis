@@ -1,5 +1,6 @@
-const linearAlgebra = require('linear-algebra')(),
-  Matrix = linearAlgebra.Matrix;
+const linearAlgebra = require('linear-algebra')();
+
+const Matrix = linearAlgebra.Matrix;
 
 
 // General function to sort JSON array by attribute:
@@ -36,7 +37,7 @@ exports.getBest = function (m, w, ia) {
   if (ia.every(i => typeof i === 'string') === false) {
     return 'ERROR. Impact argument MUST contain string type elements.';
   }
-  if (ia.indexOf('max') > -1 == false || ia.indexOf('min') > -1 === false) {
+  if (ia.indexOf('max') > -1 === false || ia.indexOf('min') > -1 === false) {
     return 'ERROR. Impact argument MUST contain string type element exactly named "max" or "min" accordingly.';
   }
 
@@ -50,7 +51,8 @@ exports.getBest = function (m, w, ia) {
   }
 
   let i = 0;
-  for (i = 0; i < m.cols; i++) {
+
+  for (i = 0; i < m.cols; i += 1) {
     if (w[i] > 1) {
       return 'ERROR. The value from an element in the weights argument cannot be higher than 1.';
     }
@@ -73,10 +75,10 @@ exports.getBest = function (m, w, ia) {
   let norm = 0;
   const normArray = [];
 
-  for (j = 0; j < m.cols; j++) {
-    for (i = 0; i < m.rows; i++) {
+  for (j = 0; j < m.cols; j += 1) {
+    for (i = 0; i < m.rows; i += 1) {
       const num = m.data[i][j];
-      norm = Math.pow(num, 2) + norm;
+      norm = (num ** 2) + norm;
     }
 
 
@@ -87,11 +89,11 @@ exports.getBest = function (m, w, ia) {
     norm = 0;
   }
 
-  mNormArray = [];
+  let mNormArray = [];
 
 
   i = 0;
-  for (i = 0; i < m.rows; i++) {
+  for (i = 0; i < m.rows; i += 1) {
     mNormArray.push(normArray);
   }
 
@@ -109,44 +111,45 @@ exports.getBest = function (m, w, ia) {
   // Weighted normalised alternative matrix
   let ev = [];
   i = 0;
-  for (i = 0; i < m.rows; i++) {
+  for (i = 0; i < m.rows; i += 1) {
     ev.push(w);
   }
 
   ev = new Matrix(ev);
-  wnm = nm.mul(ev);
+  const wnm = nm.mul(ev);
 
 
   // Computing ideal and anti-ideal solution
 
   i = 0; // Rows
   j = 0; // Columns
-  a = 0; // iterations
+  let a = 0; // iterations
   let attributeValues = [];
   const idealSolution = [];
   const aidealSolution = [];
+  let attributeFunction = null;
 
-  for (a = 0; a < 2; a++) {
-    for (j = 0; j < m.cols; j++) {
-      for (i = 0; i < m.rows; i++) {
+  for (a = 0; a < 2; a += 1) {
+    for (j = 0; j < m.cols; j += 1) {
+      for (i = 0; i < m.rows; i += 1) {
         attributeValues.push(wnm.data[i][j]);
       }
 
       if (a === 0) {
-        if (ia[j] == 'min') {
+        if (ia[j] === 'min') {
           attributeFunction = Math.min(...attributeValues);
-	    idealSolution.push(attributeFunction);
-        } else if (ia[j] == 'max') {
-	    attributeFunction = Math.max(...attributeValues);
-	    idealSolution.push(attributeFunction);
+          idealSolution.push(attributeFunction);
+        } else if (ia[j] === 'max') {
+          attributeFunction = Math.max(...attributeValues);
+          idealSolution.push(attributeFunction);
         }
       } else if (a === 1) {
-        if (ia[j] == 'min') {
+        if (ia[j] === 'min') {
           attributeFunction = Math.max(...attributeValues);
-	    aidealSolution.push(attributeFunction);
-        } else if (ia[j] == 'max') {
-	    attributeFunction = Math.min(...attributeValues);
-	    aidealSolution.push(attributeFunction);
+          aidealSolution.push(attributeFunction);
+        } else if (ia[j] === 'max') {
+          attributeFunction = Math.min(...attributeValues);
+          aidealSolution.push(attributeFunction);
         }
       }
 
@@ -161,36 +164,39 @@ exports.getBest = function (m, w, ia) {
   j = 0; // Cols
   a = 0;
 
-  listIdeal = [];
-  listaIdeal = [];
+  const listIdeal = [];
+  const listaIdeal = [];
+  let distToI = 0;
+  let distToaI = 0;
 
-  for (a = 0; a < 2; a++) {
-    for (i = 0; i < m.rows; i++) {
+  for (a = 0; a < 2; a += 1) {
+    for (i = 0; i < m.rows; i += 1) {
       distToI = 0;
       distToaI = 0;
-      for (j = 0; j < m.cols; j++) {
+      for (j = 0; j < m.cols; j += 1) {
         wnm.data[i];
-	  if (a == 0) {
+        if (a === 0) {
           distToI += Math.pow(wnm.data[i][j] - idealSolution[j], 2);
-	  } else {
-	    distToaI += Math.pow(wnm.data[i][j] - aidealSolution[j], 2);
-	  }
+        } else {
+          distToaI += Math.pow(wnm.data[i][j] - aidealSolution[j], 2);
+        }
       }
 
-      if (a == 0) {
+      if (a === 0) {
         distToI = Math.sqrt(distToI);
-	  listIdeal.push(distToI);
+        listIdeal.push(distToI);
       } else {
         distToaI = Math.sqrt(distToaI);
-	  listaIdeal.push(distToaI);
+        listaIdeal.push(distToaI);
       }
     }
   }
 
 
   i = 0;
-  listedPerformancedScore = [];
-  for (i = 0; i < m.rows; i++) {
+  const listedPerformancedScore = [];
+  let performanceScore = null;
+  for (i = 0; i < m.rows; i += 1) {
     performanceScore = listaIdeal[i] / (listIdeal[i] + listaIdeal[i]);
     listedPerformancedScore.push(performanceScore);
   }
@@ -198,11 +204,11 @@ exports.getBest = function (m, w, ia) {
 
   const indexedPerformanceScore = [];
   i = 0;
-  for (i = 0; i < m.rows; i++) {
+  for (i = 0; i < m.rows; i += 1) {
     const dp = {
-	 index: i,
-	 data: m.data[i],
-	 ps: listedPerformancedScore[i],
+      index: i,
+      data: m.data[i],
+      ps: listedPerformancedScore[i],
     };
     indexedPerformanceScore.push(dp);
   }

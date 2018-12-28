@@ -1,13 +1,14 @@
 const assert = require('assert');
 
-const linearAlgebra = require('linear-algebra')(),
-                    Matrix = linearAlgebra.Matrix;
+const linearAlgebra = require('linear-algebra')();
+
+const Matrix = linearAlgebra.Matrix;
 
 const topsis = require('../index.js');
 
 const m = new Matrix([[2, 5, 5], [60, 26, 4], [20, 20, 4], [500, 2, 4], [50, 23, 3], [25, 10, 1]]);
-const ia = ['min', 'min', 'max'];
 const w = [0.27, 0.33, 0.40];
+const ia = ['min', 'min', 'max'];
 
 describe('isArray', () => {
   it('Result should be array.', () => {
@@ -21,3 +22,4 @@ describe('getBest', () => {
   });
 });
 
+console.log(topsis.getBest(m, w, ia));
