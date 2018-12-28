@@ -58,29 +58,27 @@ Returns:
 
 ### Algorithm Steps
 
-1. Computing normalised alternative matrix. (Alternative matrix divided by calculated norm of each column).
-2. Computing weighted normalised alternative matrix. (Alternative matrix multiplied by eigenvector).
-3. Calculating the ideal solution. (An hypothetical alternative that maximises benefits and minimises costs the most).
-4. Calculating the anti-ideal solution. (An hypothetical alternative that minimises benefits and maximises costs the most).
-5. For each alternative in the weighted normalised alternative matrix, calculate the euclidean distance to the ideal and anti-ideal solution.
-6. Calculate a performance score for each alternative. (Distance to the anti-ideal solution divided by the sum of the distance of the ideal and anti-ideal solution).
-7. Rank in descending order performance scores for each alternative.
-8. Return the top-one.
-
-
+1.  Computing normalised alternative matrix. (Alternative matrix divided by calculated norm of each column).
+2.  Computing weighted normalised alternative matrix. (Alternative matrix multiplied by eigenvector).
+3.  Calculating the ideal solution. (An hypothetical alternative that maximises benefits and minimises costs the most).
+4.  Calculating the anti-ideal solution. (An hypothetical alternative that minimises benefits and maximises costs the most).
+5.  For each alternative in the weighted normalised alternative matrix, calculate the euclidean distance to the ideal and anti-ideal solution.
+6.  Calculate a performance score for each alternative. (Distance to the anti-ideal solution divided by the sum of the distance of the ideal and anti-ideal solution).
+7.  Rank in descending order performance scores for each alternative.
+8.  Return the top-one.
 
 ## Package roadmap
 
-- [x] TOPSIS.
-- [x] Support for Linear-Algebra matrices. 
-- [ ] Support for MathJS matrices.
-- [ ] (FTOPSIS) Fuzzy TOPSIS
-- [ ] (IFTOPSIS) Intuisionistic Fuzzy TOPSIS
-- [ ] (NTOPSIS) Neutrosophic TOPSIS
+-   [x] TOPSIS.
+-   [x] Support for Linear-Algebra matrices. 
+-   [ ] Support for MathJS matrices.
+-   [ ] (FTOPSIS) Fuzzy TOPSIS
+-   [ ] (IFTOPSIS) Intuisionistic Fuzzy TOPSIS
+-   [ ] (NTOPSIS) Neutrosophic TOPSIS
 
 ## Package Dependencies
 
-* linear-algebra
+-   linear-algebra
 
 ## License
 
@@ -88,7 +86,7 @@ MIT
 
 ## Contributing
 
-https://github.com/patelotech/topsis
+<https://github.com/patelotech/topsis>
 
 ## Linting
 
@@ -97,13 +95,13 @@ https://github.com/patelotech/topsis
 
 ### Configuration
 
-* Eslint v-4.19.1 // AIRBNB Configuration
+-   Eslint v-4.19.1 // AIRBNB Configuration
 
-### Linting scripts:
+### Linting scripts
 
-* Error check: `npm run check`
-* Error fix:  `npm run lint` or `npm run check -- --fix`
+-   Error check: `npm run check`
+-   Error fix:  `npm run lint` or `npm run lint -- --fix`
 
 ## Bibliography
 
-* Hwang, C. L., & Yoon, K. (1981). Methods for multiple attribute decision making. In Multiple attribute decision making (pp. 58-191).Springer, Berlin, Heidelberg.
+-   Hwang, C. L., & Yoon, K. (1981). Methods for multiple attribute decision making. In Multiple attribute decision making (pp. 58-191).Springer, Berlin, Heidelberg.
