@@ -16,7 +16,7 @@ const topsis = require('topsis');
 [![dependencies Status](https://david-dm.org/patelotech/topsis/status.svg)](https://david-dm.org/patelotech/topsis)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/dashersw/recht/master/LICENSE) [![Greenkeeper badge](https://badges.greenkeeper.io/patelotech/topsis.svg)](https://greenkeeper.io/)
 
-This is the first library in NodeJS to implement TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution). TOPSIS is an algorithm developed in 1981 by Hwang and Yoon.
+This is the first npm library in NodeJS to implement TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution). This library is fully **open-source** and **free** to use. TOPSIS is an algorithm developed in 1981 by Hwang and Yoon.
 It is a technique commonly utilised in the field of operations research, managerial accounting, decision science and prescriptive analytics for multi-attribute decision-making problems (MADC).
 Its most common use case is to select the optimal choice from an array of alternatives with conflicting criteria. (For instance, to select a celphone to buy that have the highest quality camera at the lowest price).
 The central idea behind the algorithm is that the most desirable solution is the one that has the highest geometric distance (euclidean distance) to the anti-ideal solution and the lowest euclidean distance to the ideal solution.
@@ -89,7 +89,7 @@ MIT
 
 ## Linting
 
-* AIRBNB
+-   AIRBNB
 [AIRBNB JS CODE STYLE](https://dev.mysql.com/doc/ "AIRBNB JS CODE STYLE")
 
 ### Configuration
@@ -104,3 +104,5 @@ MIT
 ## Bibliography
 
 -   Hwang, C. L., & Yoon, K. (1981). Methods for multiple attribute decision making. In Multiple attribute decision making (pp. 58-191).Springer, Berlin, Heidelberg.
+
+**Proudly made in 🇦🇷**
