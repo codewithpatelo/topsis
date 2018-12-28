@@ -1,8 +1,6 @@
 {
   "extends": "airbnb",
   "rules":{
-  "linebreak-style": 0,
-  "global-require": 0,
     "linebreak-style": [
           "error",
           "windows"
