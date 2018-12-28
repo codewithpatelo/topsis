@@ -2,7 +2,6 @@ const linearAlgebra = require('linear-algebra')();
 
 const Matrix = linearAlgebra.Matrix;
 
-
 // General function to sort JSON array by attribute:
 
 function sortedBy(elm) {
