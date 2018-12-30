@@ -6,7 +6,7 @@ const Matrix = linearAlgebra.Matrix;
 function sortedBy(elm) {
   return function order(a, b) {
     if (b[elm] > a[elm]) {
-       return 1;
+      return 1;
     } else if (b[elm] < a[elm]) {
       return -1;
     }
@@ -14,15 +14,13 @@ function sortedBy(elm) {
   };
 }
 
-
 exports.getBest = function getBest(m, w, ia) {
-// ERROR HANDLERS
+  // ERROR HANDLERS
 
   if (!(m.data)) {
     console.log('ERROR. Matrix argument MUST be a linear-algebra module matrix.');
     return 'ERROR';
   }
-
 
   if (Array.isArray(ia) === false) {
     console.log('ERROR. Impact argument MUST be an array.');
@@ -45,7 +43,6 @@ exports.getBest = function getBest(m, w, ia) {
     console.log('ERROR. Impact argument MUST contain string type element exactly named "max" or "min" accordingly.');
     return 'ERROR';
   }
-
 
   if (Array.isArray(w) === false) {
     console.log('ERROR. Weights argument MUST be an array.');
@@ -78,7 +75,6 @@ exports.getBest = function getBest(m, w, ia) {
 
 
   // Calculating norm
-
   let j; // Cols
   i = 0; // Rows
   let norm = 0;
@@ -90,32 +86,26 @@ exports.getBest = function getBest(m, w, ia) {
       norm = (num ** 2) + norm;
     }
 
-
     norm = Math.round(Math.sqrt(norm) * 100) / 100;
-
     normArray.push(norm);
-
     norm = 0;
   }
 
   let mNormArray = [];
 
-
   i = 0;
+
   for (i = 0; i < m.rows; i += 1) {
     mNormArray.push(normArray);
   }
 
   mNormArray = new Matrix(mNormArray);
 
-
   // Normalised Alternative Matrix
-
 
   let nm = [];
 
   nm = m.div(mNormArray);
-
 
   // Weighted normalised alternative matrix
   let ev = [];
@@ -125,6 +115,7 @@ exports.getBest = function getBest(m, w, ia) {
   }
 
   ev = new Matrix(ev);
+
   const wnm = nm.mul(ev);
 
 
