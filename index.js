@@ -3,11 +3,10 @@ const linearAlgebra = require('linear-algebra')();
 const Matrix = linearAlgebra.Matrix;
 
 // General function to sort JSON array by attribute:
-
 function sortedBy(elm) {
   return function order(a, b) {
     if (b[elm] > a[elm]) {
-      return 1;
+       return 1;
     } else if (b[elm] < a[elm]) {
       return -1;
     }
@@ -18,7 +17,6 @@ function sortedBy(elm) {
 
 exports.getBest = function getBest(m, w, ia) {
 // ERROR HANDLERS
-
 
   if (!(m.data)) {
     console.log('ERROR. Matrix argument MUST be a linear-algebra module matrix.');
