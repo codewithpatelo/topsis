@@ -35,7 +35,8 @@ let m = new Matrix([
                     [500, 2, 4], 
                     [50, 23, 3], 
                     [25, 10, 1]
-                    ]); // This argument is the alternative matrix. Each row is an alternative and each column is a criterion.
+                    ]); 
+// m argument is the alternative matrix. Each row is an alternative and each column is a criterion.
                     
 let w = [0.27,0.33,0.40];  // This argument indicates the weights of each criteria.
 let ia = ['min', 'min', 'max']; // This argument indicates if a criterion is beneficial or not.
