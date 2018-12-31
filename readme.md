@@ -28,7 +28,15 @@ The central idea behind the algorithm is that the most desirable solution is the
 ## Example Usage
 
 ```javascript
-let m = new Matrix([[2, 5, 5], [60, 26, 4], [20, 20, 4],  [500, 2, 4], [50, 23, 3], [25, 10, 1]]); // This argument is the alternative matrix. Each row is an alternative and each column is a criterion.
+let m = new Matrix([
+                    [2, 5, 5], 
+                    [60, 26, 4], 
+                    [20, 20, 4],  
+                    [500, 2, 4], 
+                    [50, 23, 3], 
+                    [25, 10, 1]
+                    ]); // This argument is the alternative matrix. Each row is an alternative and each column is a criterion.
+                    
 let w = [0.27,0.33,0.40];  // This argument indicates the weights of each criteria.
 let ia = ['min', 'min', 'max']; // This argument indicates if a criterion is beneficial or not.
 
@@ -90,7 +98,7 @@ Returns:
       cols: 4 
     },
   w: [ 0.52, 0.26, 0.04, 0.18 ],
-  ia: [ 'max', 'max', 'max', 'max' ]
+  ia: [ 'max', 'min', 'max', 'max' ]
 }
 ```
 
