@@ -76,7 +76,22 @@ topsis.createRandom(); // Creates random arguments for a topsis.getBest function
 
 Returns:
 ```javascript
-[2, 5, 5]
+{ 
+  m : 
+    { data:
+     [ [ 478, 6, 184, 1000 ],
+       [ 805, 34, 703, 770 ],
+       [ 216, 210, 294, 225 ],
+       [ 857, 253, 396, 63 ],
+       [ 244, 652, 886, 736 ],
+       [ 378, 824, 948, 769 ],
+       [ 298, 76, 573, 604 ] ],
+      rows: 7,
+      cols: 4 
+    },
+  w: [ 0.52, 0.26, 0.04, 0.18 ],
+  ia: [ 'max', 'max', 'max', 'max' ]
+}
 ```
 
 ## Package roadmap
