@@ -66,6 +66,19 @@ Returns:
 7.  Rank in descending order performance scores for each alternative.
 8.  Return the top-one.
 
+## Aditional functions...
+
+### CreateRandom
+```javascript
+topsis.createRandom(); // Creates random arguments for a topsis.getBest function.
+
+```
+
+Returns:
+```javascript
+[2, 5, 5]
+```
+
 ## Package roadmap
 
 -   [x] TOPSIS.

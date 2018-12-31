@@ -7,7 +7,7 @@ function sortedBy(elm) {
   return function order(a, b) {
     if (b[elm] > a[elm]) {
       return 1;
-    } else if (b[elm] < a[elm]) {
+    } if (b[elm] < a[elm]) {
       return -1;
     }
     return 0;
@@ -39,7 +39,8 @@ exports.getBest = function getBest(m, w, ia) {
 
   const c1 = ia.indexOf('max') > -1;
   const c2 = ia.indexOf('min') > -1;
-  if (c1 === false || c2 === false) {
+
+  if (!(c1 || c2)) {
     console.log('ERROR. Impact argument MUST contain string type element exactly named "max" or "min" accordingly.');
     return 'ERROR';
   }
@@ -218,3 +219,92 @@ exports.getBest = function getBest(m, w, ia) {
   return rankedPerformanceScore[0].data;
 }; // TERMINA FUNCION
 
+
+exports.createRandom = function createRandom() {
+  const cn = Math.floor(Math.random() * 6) + 2;
+  const rn = Math.floor(Math.random() * 20) + 1;
+  let i = 0;
+  let j = 0;
+
+  let c = [];
+
+  const r = [];
+
+  for (i = 0; i < rn; i += 1) {
+    for (j = 0; j < cn; j += 1) {
+      c.push(Math.floor(Math.random() * 1000) + 1);
+    }
+    r.push(c);
+    c = [];
+  }
+
+  const m2 = new Matrix(r);
+
+  const w2 = [];
+  const ia2 = [];
+  j = 0;
+
+  let num = 0;
+
+  for (j = 0; j < cn; j += 1) {
+    num = Math.random();
+    w2.push(num);
+  }
+
+  j = 0;
+  num = 0;
+
+  for (j = 0; j < cn; j += 1) {
+    num = w2[j] + num;
+  }
+
+  let sum = 0;
+
+
+  while (!((sum > 0.95) && (sum < 1.05))) {
+    sum = Math.round(num);
+    num -= 1;
+    num /= cn;
+
+    j = 0;
+
+    for (j = 0; j < cn; j += 1) {
+      w2[j] = Number((w2[j] - num).toFixed(2));
+    }
+
+
+    for (j = 0; j < cn; j += 1) {
+      w2[j] = Math.abs(w2[j]);
+    }
+
+    num = 0;
+    j = 0;
+    for (j = 0; j < cn; j += 1) {
+      num = w2[j] + num;
+    }
+
+
+    sum = num;
+  }
+
+
+  num = 0;
+  j = 0;
+  let v = '';
+
+
+  for (j = 0; j < cn; j += 1) {
+    num = Math.floor(Math.random() * 2);
+    if (num === 1) {
+      v = 'max';
+    } else if (num === 0) {
+      v = 'min';
+    }
+    ia2.push(v);
+  }
+
+  const resp = { m: m2, w: w2, ia: ia2 };
+
+
+  return resp;
+};
