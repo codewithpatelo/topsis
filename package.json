@@ -10,7 +10,7 @@
     "cover": "nyc mocha && nyc report --reporter=text-lcov | coveralls",
     "report-cover": "nyc report --reporter=text-lcov | coveralls",
     "clean": "nyc mocha && npm run lint -- --fix",
-    "vul-check" : "npm audit",
+    "vul-check" : "npm audit"
     
   },
   "precommit": [
