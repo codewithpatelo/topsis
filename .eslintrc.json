@@ -1,13 +1,9 @@
 {
   "extends": "airbnb",
-  "plugins": [
-    //"mocha"
-  ],
   "rules":{
     "linebreak-style": [
           "error",
           "windows"
     ]
-    //"mocha/no-exclusive-tests": "error"
   }
 }
