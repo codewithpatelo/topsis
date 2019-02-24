@@ -16,6 +16,8 @@ const topsis = require('topsis');
 [![dependencies Status](https://david-dm.org/patelotech/topsis/status.svg)](https://david-dm.org/patelotech/topsis)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/dashersw/recht/master/LICENSE) [![Greenkeeper badge](https://badges.greenkeeper.io/patelotech/topsis.svg)](https://greenkeeper.io/)
 
+<a href="https://www.patreon.com/join/patelotech?" target="_blank"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" > </a>
+
 This is the first npm library in NodeJS to implement TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution). This library is fully **open-source** and **free** to use. TOPSIS is an algorithm developed in 1981 by Hwang and Yoon.
 It is a technique commonly utilised in the field of operations research, managerial accounting, decision science and prescriptive analytics for multi-attribute decision-making problems (MADC).
 Its most common use case is to select the optimal choice from an array of alternatives with conflicting criteria. (For instance, to select a celphone to buy that have the highest quality camera at the lowest price).
